@@ -1,104 +1,182 @@
+/* ========================================
+   💜 LOVIA AI — RESPONSIVE TABLET DESIGN
+   Created by Gloria Dwomoh
+   ======================================== */
+
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  padding: 12px;
-  font-family: Arial, sans-serif;
-  background: #f4efff;
-  color: #302344;
+:root {
+  --purple: #7541b5;
+  --purple-dark: #5b278f;
+  --purple-light: #f0e5ff;
+  --lavender: #faf5ff;
+  --pink: #fff5fb;
+  --text: #352344;
+  --muted: #786889;
+  --border: #e4d5f7;
+  --white: #ffffff;
 }
 
-.app {
+html {
   width: 100%;
-  max-width: 650px;
-  height: 90vh;
-  min-height: 420px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 22px;
-  overflow: hidden;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(
+    135deg,
+    #f5efff,
+    #eadcff,
+    #fff5fb
+  );
+  overflow-x: hidden;
+}
+
+/* ========================================
+   MAIN LOVIA CHAT
+   ======================================== */
+
+.app {
   display: flex;
   flex-direction: column;
-  box-shadow: 0 8px 30px #4d28751a;
+
+  width: 100%;
+  max-width: none;
+
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+
+  margin: 0;
+  padding: 0;
+
+  background: var(--white);
+  border-radius: 0;
+  overflow: hidden;
+
+  box-shadow: none;
 }
+
+/* Header */
 
 .topbar {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px;
-  background: #f0e5ff;
-  border-bottom: 1px solid #e4d5f7;
+  gap: 12px;
+
+  flex-shrink: 0;
+  padding: 14px 18px;
+
+  background: linear-gradient(
+    135deg,
+    #f0e5ff,
+    #fff0fa
+  );
+
+  border-bottom: 1px solid var(--border);
 }
 
 .brand-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
   display: grid;
   place-items: center;
-  background: white;
-  font-size: 24px;
+
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: var(--white);
+
+  font-size: 26px;
 }
 
 .brand {
   flex: 1;
+  min-width: 0;
 }
 
 .brand h1 {
   margin: 0;
-  font-size: 21px;
   color: #6d35a5;
+  font-size: 23px;
 }
 
 .brand p {
   margin: 4px 0 0;
-  font-size: 12px;
-  color: #746681;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .icon-btn {
+  flex-shrink: 0;
   border: none;
   border-radius: 12px;
-  padding: 9px;
-  background: white;
-  font-size: 17px;
+  padding: 10px 12px;
+
+  background: var(--white);
+  color: var(--purple);
+
+  font-size: 18px;
   cursor: pointer;
 }
+
+/* Chat area */
 
 .chat {
   flex: 1;
   min-height: 0;
+  width: 100%;
+
   overflow-y: auto;
-  padding: 18px 12px;
+  overscroll-behavior: contain;
+
+  padding: 24px;
   background: #fffaff;
 }
 
 .welcome {
+  max-width: 850px;
+  margin: 0 auto;
+
   text-align: center;
-  padding: 35px 18px;
-  color: #756782;
+  padding: 40px 20px;
+
+  color: var(--muted);
 }
 
 .big-heart {
-  font-size: 52px;
+  font-size: 60px;
 }
 
 .welcome h2 {
   color: #7439a9;
+  font-size: 27px;
 }
 
 .welcome p {
-  line-height: 1.6;
+  line-height: 1.7;
+  font-size: 16px;
 }
+
+/* Message rows */
 
 .row {
   display: flex;
   align-items: flex-end;
-  gap: 8px;
-  margin: 14px 0;
+  gap: 10px;
+
+  width: 100%;
+  margin: 18px 0;
 }
 
 .row.user {
@@ -106,90 +184,121 @@ body {
 }
 
 .mini {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
   display: grid;
   place-items: center;
+
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+
   border-radius: 50%;
-  background: #f0e5ff;
+  background: var(--purple-light);
 }
 
 .row > div:nth-child(2) {
-  max-width: 82%;
   min-width: 0;
+  max-width: 80%;
 }
 
 .bubble {
-  padding: 11px 14px;
-  border-radius: 17px;
-  line-height: 1.5;
+  padding: 13px 17px;
+  border-radius: 19px;
+
+  line-height: 1.65;
+  font-size: 16px;
+
   overflow-wrap: anywhere;
   white-space: pre-wrap;
 }
 
 .row.lovia .bubble {
-  background: #f0e5ff;
-  color: #342343;
+  background: var(--purple-light);
+  color: var(--text);
   border-bottom-left-radius: 5px;
 }
 
 .row.user .bubble {
   background: #6f42c1;
-  color: white;
+  color: var(--white);
   border-bottom-right-radius: 5px;
 }
 
 .meta {
-  margin: 5px 4px 0;
-  font-size: 10px;
+  margin: 6px 4px 0;
   color: #91859c;
+  font-size: 11px;
 }
 
 .row.user .meta {
   text-align: right;
 }
 
+/* Status */
+
 .status {
-  padding: 5px 14px;
-  font-size: 12px;
-  color: #766582;
+  flex-shrink: 0;
+  padding: 7px 18px;
+
+  color: var(--muted);
   background: #fffaff;
+
+  font-size: 13px;
 }
+
+/* Message input area */
 
 .composer {
   display: flex;
   align-items: flex-end;
-  gap: 8px;
-  padding: 12px;
-  background: white;
+  gap: 10px;
+
+  flex-shrink: 0;
+  width: 100%;
+
+  padding: 14px 18px;
+
+  background: var(--white);
   border-top: 1px solid #eee5f5;
 }
 
 #message {
   flex: 1;
   min-width: 0;
-  max-height: 110px;
+  max-height: 140px;
   resize: none;
-  padding: 12px;
+
+  padding: 14px 16px;
+
   border: 1px solid #ddcbea;
-  border-radius: 16px;
+  border-radius: 17px;
   outline: none;
-  font: inherit;
-  line-height: 1.4;
+
+  background: #fffaff;
+  color: var(--text);
+
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 #message:focus {
   border-color: #8955c7;
+  box-shadow: 0 0 0 3px #8955c71a;
 }
 
 #sendBtn {
+  flex-shrink: 0;
+
   border: none;
-  border-radius: 14px;
-  padding: 13px 15px;
-  background: #7541b5;
-  color: white;
+  border-radius: 15px;
+  padding: 14px 20px;
+
+  background: var(--purple);
+  color: var(--white);
+
+  font-size: 15px;
   font-weight: bold;
+
   cursor: pointer;
 }
 
@@ -199,100 +308,116 @@ body {
 }
 
 .footer {
-  padding: 7px;
+  flex-shrink: 0;
+
+  padding: 9px;
+
   text-align: center;
-  background: white;
+  background: var(--white);
   color: #9b8ba8;
+
   font-size: 11px;
 }
 
-@media (max-width: 480px) {
-  body {
-    padding: 0;
-  }
+/* ========================================
+   STUDY CENTRE
+   ======================================== */
 
-  .app {
-    height: 100dvh;
-    min-height: 0;
-    border-radius: 0;
-  }
-}
 .study-nav {
-padding: 10px 16px;
-text-align: center;
-background: #ffffff;
+  padding: 12px 18px;
+  text-align: center;
+  background: var(--white);
 }
 
 #studyBtn {
-width: 100%;
-padding: 12px;
-border: none;
-border-radius: 14px;
-background: #8b5cf6;
-color: white;
-font-size: 16px;
-font-weight: bold;
-cursor: pointer;
+  width: 100%;
+  padding: 14px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #8b5cf6;
+  color: var(--white);
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
+
 #studyScreen {
-padding: 20px;
-background: #faf5ff;
-color: #352052;
-min-height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  padding: 28px;
+  background: var(--lavender);
+  color: var(--text);
 }
 
 #studyScreen h2 {
-color: #7c3aed;
-text-align: center;
+  color: #7c3aed;
+  text-align: center;
 }
 
 #studyScreen p {
-text-align: center;
+  text-align: center;
+  line-height: 1.6;
 }
 
 #studyScreen label {
-display: block;
-margin-top: 16px;
-margin-bottom: 6px;
-font-weight: bold;
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  font-weight: bold;
 }
 
 #studyScreen select {
-width: 100%;
-padding: 12px;
-border: 1px solid #c4b5fd;
-border-radius: 10px;
-background: white;
-font-size: 16px;
+  width: 100%;
+  padding: 14px;
+
+  border: 1px solid #c4b5fd;
+  border-radius: 11px;
+
+  background: var(--white);
+  font-size: 16px;
 }
 
 #startStudyBtn,
 #backToChatBtn {
-width: 100%;
-padding: 12px;
-margin-top: 14px;
-border: none;
-border-radius: 12px;
-font-size: 16px;
-font-weight: bold;
-cursor: pointer;
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 #startStudyBtn {
-background: #8b5cf6;
-color: white;
+  background: #8b5cf6;
+  color: var(--white);
 }
 
 #backToChatBtn {
-background: #ede9fe;
-color: #5b21b6;
+  background: #ede9fe;
+  color: #5b21b6;
 }
+
+/* ========================================
+   ACCOUNT / LOGIN
+   ======================================== */
+
 #accountScreen {
-  padding: 24px;
+  width: 100%;
   min-height: 100vh;
-  background: #faf5ff;
-  color: #352052;
-  box-sizing: border-box;
+  min-height: 100dvh;
+
+  padding: 28px;
+  background: var(--lavender);
+  color: var(--text);
 }
 
 #accountScreen h2 {
@@ -303,27 +428,34 @@ color: #5b21b6;
 #accountScreen label {
   display: block;
   margin-top: 18px;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
   font-weight: bold;
 }
 
 #accountScreen input {
   width: 100%;
-  padding: 13px;
+  padding: 14px;
+
   border: 1px solid #c4b5fd;
-  border-radius: 10px;
+  border-radius: 11px;
+
   box-sizing: border-box;
+  background: var(--white);
+
   font-size: 16px;
 }
 
 #accountScreen button {
   width: 100%;
-  padding: 13px;
-  margin-top: 14px;
+  padding: 14px;
+  margin-top: 15px;
+
   border: none;
   border-radius: 12px;
+
   background: #8b5cf6;
-  color: white;
+  color: var(--white);
+
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -336,13 +468,23 @@ color: #5b21b6;
 
 #accountMessage {
   overflow-wrap: anywhere;
+  line-height: 1.6;
 }
+
+/* ========================================
+   STUDENT DASHBOARD
+   ======================================== */
+
 #dashboardScreen {
-  padding: 22px;
+  width: 100%;
   min-height: 100vh;
-  box-sizing: border-box;
-  background: #faf5ff;
-  color: #352052;
+  min-height: 100dvh;
+
+  padding: 28px;
+
+  background: var(--lavender);
+  color: var(--text);
+
   font-family: Arial, sans-serif;
 }
 
@@ -357,18 +499,20 @@ color: #5b21b6;
 }
 
 .dashboard-card {
-  background: white;
+  padding: 20px;
+  margin: 16px 0;
+
+  background: var(--white);
   border: 1px solid #e9d5ff;
-  border-radius: 16px;
-  padding: 16px;
-  margin: 14px 0;
-  box-shadow: 0 3px 10px rgba(124, 58, 237, 0.08);
+  border-radius: 17px;
+
+  box-shadow: 0 3px 10px #7c3aed14;
 }
 
 .dashboard-card h3 {
   margin: 0 0 10px;
-  font-size: 16px;
   color: #6d28d9;
+  font-size: 17px;
 }
 
 .dashboard-card p {
@@ -379,26 +523,31 @@ color: #5b21b6;
 }
 
 #dashboardHistory {
-  margin-top: 22px;
+  margin-top: 24px;
 }
 
 #dashboardHistory > div {
-  background: white;
+  padding: 15px;
+  margin: 11px 0;
+
+  background: var(--white);
   border-radius: 12px;
-  padding: 13px;
-  margin: 10px 0;
+
   overflow-wrap: anywhere;
 }
 
 #refreshDashboardBtn,
 #backFromDashboardBtn {
   width: 100%;
-  padding: 13px;
-  margin-top: 14px;
+  padding: 14px;
+  margin-top: 15px;
+
   border: none;
   border-radius: 12px;
+
   background: #8b5cf6;
-  color: white;
+  color: var(--white);
+
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -408,22 +557,23 @@ color: #5b21b6;
   background: #ede9fe;
   color: #5b21b6;
 }
-/* 💜 LOVIA BEAUTIFUL LAVENDER THEME 💜 */
 
-body {
-  background: linear-gradient(135deg, #f5efff, #eadcff, #fff5fb);
-  color: #35204f;
-  font-family: Arial, sans-serif;
-}
+/* ========================================
+   LEADERBOARD
+   ======================================== */
 
 #leaderboardScreen {
-  max-width: 700px;
-  margin: 25px auto;
-  padding: 25px 18px;
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+  padding: 28px;
+
   background: linear-gradient(145deg, #ffffff, #f6edff);
-  border: 2px solid #e2ccff;
-  border-radius: 26px;
-  box-shadow: 0 10px 30px rgba(104, 55, 155, 0.15);
+  border: 1px solid #e2ccff;
+  border-radius: 0;
+
+  box-shadow: 0 8px 24px #68379b12;
 }
 
 #leaderboardScreen h2 {
@@ -444,67 +594,68 @@ body {
 }
 
 #leaderboardMessage li {
-  background: #ffffff;
+  padding: 16px;
+  margin: 12px 0;
+
+  background: var(--white);
   border: 1px solid #eadcff;
   border-radius: 15px;
-  padding: 16px 12px;
-  margin: 12px 0;
-  box-shadow: 0 4px 12px rgba(104, 55, 155, 0.08);
+
+  box-shadow: 0 4px 12px #68379b12;
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
 
 #refreshLeaderboardBtn,
 #backFromLeaderboardBtn {
+  padding: 14px 18px;
+  margin: 8px 4px;
+
   background: linear-gradient(135deg, #9b5de5, #7137a8);
-  color: white;
+  color: var(--white);
+
   border: none;
   border-radius: 25px;
-  padding: 13px 18px;
-  margin: 8px 4px;
+
   font-size: 15px;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(113, 55, 168, 0.2);
+  cursor: pointer;
 }
 
-#refreshLeaderboardBtn:active,
-#backFromLeaderboardBtn:active {
-  transform: scale(0.97);
-}
+/* ========================================
+   WALLPAPER SETTINGS
+   ======================================== */
 
-@media (max-width: 600px) {
-  #leaderboardScreen {
-    margin: 12px 8px;
-    padding: 20px 12px;
-  }
-
-  #leaderboardScreen h2 {
-    font-size: 24px;
-  }
-
-  #refreshLeaderboardBtn,
-  #backFromLeaderboardBtn {
-    width: 100%;
-    margin: 7px 0;
-  }
-}
-/* 💜 LOVIA WALLPAPER SETTINGS */
 #loviaThemes {
-  background: linear-gradient(145deg, #fff0f7, #f0e6ff, #ffffff) !important;
+  position: relative;
+  z-index: 20;
+
+  width: calc(100% - 24px);
+  max-width: 520px;
+
+  margin: 12px auto;
+  padding: 24px;
+
+  background: linear-gradient(
+    145deg,
+    #fff0f7,
+    #f0e6ff,
+    #ffffff
+  ) !important;
+
   border: 2px solid #e5b8f5;
   border-radius: 24px !important;
-  padding: 22px !important;
-  box-shadow: 0 12px 40px rgba(111, 45, 145, 0.3);
+
+  box-shadow: 0 12px 40px #6f2d914d;
+
   text-align: center;
-  max-width: 430px;
-  margin: 10px auto !important;
   color: #653477;
   font-family: Arial, sans-serif;
 }
 
 #loviaThemes h3 {
   color: #8e44ad;
-  font-size: 21px;
+  font-size: 22px;
   margin: 5px 0 18px;
   font-weight: bold;
 }
@@ -513,82 +664,170 @@ body {
   display: block;
   width: 100%;
   margin: 10px 0;
-  padding: 14px 12px;
+  padding: 15px;
+
   border: 1px solid #ead0f5;
   border-radius: 16px;
+
   background: linear-gradient(135deg, #ffffff, #fce8f5);
   color: #743c91;
+
   font-size: 15px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 3px 8px rgba(120, 70, 150, 0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
 
-#loviaThemes button:active {
-  transform: scale(0.97);
-  box-shadow: 0 2px 5px rgba(120, 70, 150, 0.2);
+  box-shadow: 0 3px 8px #7846961a;
 }
 
 #loviaThemes button:last-child {
   background: linear-gradient(135deg, #a65bc4, #7950a8);
-  color: white;
+  color: var(--white);
   border: none;
   margin-top: 18px;
 }
+
+/* Animated wallpaper */
+
 #loviaLiveWallpaper {
   position: fixed;
   inset: 0;
+
   width: 100%;
   height: 100%;
+
   pointer-events: none;
-  z-index: 10;
+  z-index: 1;
+
   overflow: hidden;
   opacity: 0.8;
 }
 
-/* Keep Lovia's screens above the animation */
+/* Keep app screens above wallpaper animation */
+
 .app,
 #studyScreen,
 #accountScreen,
 #leaderboardScreen,
-
-
-/* Keep the wallpaper settings above everything */
-#loviaThemes {
-  z-index: 9999 !important;
-}
-/* Make Lovia fit wider tablet screens */
-@media (min-width: 700px) {
-  body {
-    width: 100%;
-  }
-
-  #app,
-  .app,
-  .container {
-    max-width: 100%;
-    width: 100%;
-  }
-}
 #dashboardScreen {
   position: relative;
   z-index: 3;
 }
+
+/* ========================================
+   TABLET LAYOUT
+   ======================================== */
+
 @media (min-width: 700px) {
-  body {
-    padding: 8px;
+  .topbar {
+    padding: 16px 26px;
   }
 
-  .app {
-    width: 100% !important;
-    max-width: none !important;
-    height: 95vh !important;
-    margin: 0 !important;
-    border-radius: 16px;
+  .chat {
+    padding: 28px 5%;
   }
 
   .row > div:nth-child(2) {
-    max-width: 90%;
+    max-width: 72%;
+  }
+
+  .bubble {
+    padding: 15px 19px;
+    font-size: 17px;
+  }
+
+  .composer {
+    padding: 16px 26px;
+  }
+
+  #studyScreen,
+  #accountScreen,
+  #dashboardScreen {
+    padding: 36px 7%;
+  }
+
+  #leaderboardScreen {
+    padding: 36px 7%;
+  }
+}
+
+/* ========================================
+   PHONE LAYOUT
+   ======================================== */
+
+@media (max-width: 699px) {
+  .topbar {
+    gap: 9px;
+    padding: 11px;
+  }
+
+  .brand-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 23px;
+  }
+
+  .brand h1 {
+    font-size: 20px;
+  }
+
+  .brand p {
+    font-size: 11px;
+  }
+
+  .chat {
+    padding: 14px 10px;
+  }
+
+  .welcome {
+    padding: 28px 12px;
+  }
+
+  .big-heart {
+    font-size: 50px;
+  }
+
+  .row > div:nth-child(2) {
+    max-width: 86%;
+  }
+
+  .bubble {
+    padding: 11px 13px;
+    font-size: 15px;
+  }
+
+  .composer {
+    gap: 7px;
+    padding: 10px;
+  }
+
+  #message {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  #sendBtn {
+    padding: 13px 14px;
+  }
+
+  #studyScreen,
+  #accountScreen,
+  #dashboardScreen {
+    padding: 20px 15px;
+  }
+
+  #leaderboardScreen {
+    padding: 20px 14px;
+  }
+
+  #leaderboardScreen h2 {
+    font-size: 24px;
+  }
+}
+
+/* Respect devices with a screen cutout */
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .composer {
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
   }
 }
