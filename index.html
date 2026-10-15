@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Lovia😇🖤</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="app">
+  <header class="topbar">
+    <div class="brand-icon">💜</div>
+    <div class="brand">
+      <h1>Lovia</h1>
+      <p>Your friendly AI companion</p>
+    </div>
+    <button id="voiceBtn" class="icon-btn" type="button" aria-label="Toggle voice">🔇</button>
+    <button id="settingsBtn" class="icon-btn" type="button" aria-label="Settings" onclick="openLoviaThemes()">⚙️</button>
+    <button id="clearBtn" class="icon-btn" type="button" aria-label="Clear chat">🗑️</button>
+  </header>
+
+  <div class="study-nav">
+    <button id="studyBtn" type="button">📚 Study BECE &amp; WASSCE</button>
+  </div>
+
+  <main id="chat" class="chat">
+    <div class="welcome" id="welcome">
+      <div class="big-heart">💜</div>
+      <h2>Hi, I'm Lovia!</h2>
+      <p>I'm happy you're here. Ask me anything or tell me what's on your mind.</p>
+    </div>
+  </main>
+
+  <div id="status" class="status" role="status">Ready to chat 💜</div>
+
+  <form id="chatForm" class="composer">
+  <textarea id="message" placeholder="Message Lovia..." rows="1" aria-label="Your message" required></textarea>
+  <button id="micBtn" type="button" aria-label="Speak to Lovia">🎤</button>
+  <button id="sendBtn" type="submit">Send ➤</button>
+</form>
+
+  <footer class="footer">Made with 💜 by Gloria</footer>
+</div>
+
+<div id="studyScreen" hidden>
+  <h2>📚 Lovia Study Centre</h2>
+  <p>Prepare for your exams with Lovia!</p>
+
+  <label for="examChoice">Choose your exam</label>
+  <select id="examChoice">
+    <option value="BECE">BECE</option>
+    <option value="WASSCE">WASSCE</option>
+  </select>
+
+  <label for="subjectChoice">Choose your subject</label>
+  <select id="subjectChoice">
+    <option value="">Select a subject</option>
+    <option>English Language</option>
+    <option>Mathematics</option>
+    <option>Integrated Science</option>
+    <option>Social Studies</option>
+    <option>Biology</option>
+    <option>Chemistry</option>
+    <option>Physics</option>
+    <option>Economics</option>
+    <option>Government</option>
+    <option>Geography</option>
+    <option>History</option>
+    <option>Core Mathematics</option>
+    <option>Elective Mathematics</option>
+    <option>English Literature</option>
+    <option>Management in Living</option>
+    <option>Food and Nutrition</option>
+    <option>Art and Design</option>
+  </select>
+
+  <button id="startStudyBtn" type="button">Start Studying 💜</button>
+  <button id="backToChatBtn" type="button">Back to Chat</button>
+  <div id="studyQuestionArea"></div>
+</div>
+
+<div id="accountScreen" hidden>
+  <h2>💜 Student Account</h2>
+  <p>Create an account or log in to Lovia Study Centre.</p>
+
+  <label for="studentEmail">Email address</label>
+  <input type="email" id="studentEmail" placeholder="Enter your email" autocomplete="email">
+
+  <label for="studentPassword">Password</label>
+  <input type="password" id="studentPassword" placeholder="Create or enter your password" autocomplete="current-password">
+
+  <button id="signUpBtn" type="button">Create Account</button>
+  <button id="loginBtn" type="button">Log In</button>
+
+  <hr>
+
+  <h3>🏆 Leaderboard Profile</h3>
+  <p>Choose a nickname to show other students.</p>
+
+  <label for="leaderboardName">Display name</label>
+  <input type="text" id="leaderboardName" placeholder="Choose a nickname" maxlength="30">
+
+  <label>
+    <input type="checkbox" id="leaderboardOptIn">
+    I want to appear on the student leaderboard.
+  </label>
+
+  <button id="saveLeaderboardProfileBtn" type="button">💜 Save Leaderboard Profile</button>
+
+  <p id="leaderboardProfileMessage" role="status"></p>
+  <p id="accountMessage" role="status"></p>
+  <p id="accountStatus">Status: Not signed in</p>
+
+  <button id="logoutBtn" type="button">🚪 Log Out</button>
+  <button id="backFromAccountBtn" type="button">Back</button>
+</div>
+
+<div id="leaderboardScreen" hidden>
+  <h2>🏆 Lovia Student Leaderboard</h2>
+  <p>Celebrate your learning progress with other students! 💜</p>
+
+  <div id="leaderboardMessage">Student rankings will appear here.</div>
+
+  <button id="refreshLeaderboardBtn" type="button">🔄 Refresh Leaderboard</button>
+  <button id="backFromLeaderboardBtn" type="button">Back to Study Centre</button>
+</div>
+
+<div id="dashboardScreen" hidden>
+  <h2>💜 My Study Dashboard</h2>
+  <p>Welcome to your Lovia learning journey!</p>
+
+  <div class="dashboard-card">
+    <h3>📊 Questions Answered</h3>
+    <p id="dashboardQuestions">0</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h3>✅ Correct Answers</h3>
+    <p id="dashboardCorrect">0</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h3>🎯 Accuracy Percentage</h3>
+    <p id="dashboardPercentage">0%</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h3>📚 Subjects Practised</h3>
+    <p id="dashboardSubjects">None yet</p>
+  </div>
+
+  <div id="dashboardHistory"></div>
+
+  <button id="refreshDashboardBtn" type="button">🔄 Refresh My Progress</button>
+</div>
+
+<div id="loviaThemes" style="display:none; position:fixed; top:80px; left:10px; right:10px; z-index:9999; padding:15px; border-radius:15px; background:#fff0fa; margin:10px; box-sizing:border-box; max-height:75vh; overflow-y:auto;">
+  <h3>💜 Choose Lovia's Wallpaper</h3>
+  <button onclick="changeLoviaTheme('#ffe4ef')">🌸 Soft Pink (Free)</button>
+  <button onclick="changeLoviaTheme('#e6ddff')">💜 Lavender (Free)</button>
+  <button onclick="changeLoviaTheme('linear-gradient(135deg,#ffc0cb,#fff0f5)')">🌺 Cherry Blossom (Plus)</button>
+  <hr>
+
+<h3>✨ Live Wallpapers</h3>
+<p>Choose an animated background for Lovia 💜</p>
+
+<button onclick="setLoviaLiveWallpaper('butterflies')">
+  🦋 Butterfly Dreams
+</button>
+
+<button onclick="setLoviaLiveWallpaper('petals')">
+  🌸 Falling Cherry Blossoms
+</button>
+
+<button onclick="setLoviaLiveWallpaper('galaxy')">
+  🌌 Twinkling Purple Galaxy
+</button>
+
+<button onclick="setLoviaLiveWallpaper('hearts')">
+  💗 Floating Hearts
+</button>
+
+<button onclick="setLoviaLiveWallpaper('none')">
+  🌷 Turn Off Live Wallpaper
+</button>
+  <button onclick="changeLoviaTheme('linear-gradient(135deg,#301060,#9b59b6)')">🌌 Purple Galaxy (Plus)</button>
+  <button onclick="changeLoviaTheme('linear-gradient(135deg,#800080,#ffd700)')">👑 Royal Purple (Premium)</button>
+  <button onclick="changeLoviaTheme('linear-gradient(135deg,#ffb6d9,#c8b6ff,#b8f2e6)')">🍭 Cotton Candy (Plus)</button>
+  <button onclick="changeLoviaTheme('linear-gradient(135deg,#b76e79,#f7d9d4,#fff0e6)')">🌹 Rose Gold (Premium)</button>
+  <button onclick="changeLoviaTheme('linear-gradient(135deg,#e6d5ff,#fce1f3,#c9eaff)')">🦋 Magical Butterflies (Premium)</button>
+  <button onclick="closeLoviaThemes()">✖ Close</button>
+</div>
+
+<!-- 💜 LOVIA LIVE WALLPAPER CANVAS -->
+<canvas id="loviaLiveWallpaper" aria-hidden="true"></canvas>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

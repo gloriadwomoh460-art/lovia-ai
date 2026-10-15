@@ -1,0 +1,563 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 12px;
+  font-family: Arial, sans-serif;
+  background: #f4efff;
+  color: #302344;
+}
+
+.app {
+  width: 100%;
+  max-width: 650px;
+  height: 90vh;
+  min-height: 420px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 30px #4d28751a;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  background: #f0e5ff;
+  border-bottom: 1px solid #e4d5f7;
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: white;
+  font-size: 24px;
+}
+
+.brand {
+  flex: 1;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 21px;
+  color: #6d35a5;
+}
+
+.brand p {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #746681;
+}
+
+.icon-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 9px;
+  background: white;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.chat {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 18px 12px;
+  background: #fffaff;
+}
+
+.welcome {
+  text-align: center;
+  padding: 35px 18px;
+  color: #756782;
+}
+
+.big-heart {
+  font-size: 52px;
+}
+
+.welcome h2 {
+  color: #7439a9;
+}
+
+.welcome p {
+  line-height: 1.6;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.row.user {
+  flex-direction: row-reverse;
+}
+
+.mini {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f0e5ff;
+}
+
+.row > div:nth-child(2) {
+  max-width: 82%;
+  min-width: 0;
+}
+
+.bubble {
+  padding: 11px 14px;
+  border-radius: 17px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.row.lovia .bubble {
+  background: #f0e5ff;
+  color: #342343;
+  border-bottom-left-radius: 5px;
+}
+
+.row.user .bubble {
+  background: #6f42c1;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.meta {
+  margin: 5px 4px 0;
+  font-size: 10px;
+  color: #91859c;
+}
+
+.row.user .meta {
+  text-align: right;
+}
+
+.status {
+  padding: 5px 14px;
+  font-size: 12px;
+  color: #766582;
+  background: #fffaff;
+}
+
+.composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  border-top: 1px solid #eee5f5;
+}
+
+#message {
+  flex: 1;
+  min-width: 0;
+  max-height: 110px;
+  resize: none;
+  padding: 12px;
+  border: 1px solid #ddcbea;
+  border-radius: 16px;
+  outline: none;
+  font: inherit;
+  line-height: 1.4;
+}
+
+#message:focus {
+  border-color: #8955c7;
+}
+
+#sendBtn {
+  border: none;
+  border-radius: 14px;
+  padding: 13px 15px;
+  background: #7541b5;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#sendBtn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.footer {
+  padding: 7px;
+  text-align: center;
+  background: white;
+  color: #9b8ba8;
+  font-size: 11px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+
+  .app {
+    height: 100dvh;
+    min-height: 0;
+    border-radius: 0;
+  }
+}
+.study-nav {
+padding: 10px 16px;
+text-align: center;
+background: #ffffff;
+}
+
+#studyBtn {
+width: 100%;
+padding: 12px;
+border: none;
+border-radius: 14px;
+background: #8b5cf6;
+color: white;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+#studyScreen {
+padding: 20px;
+background: #faf5ff;
+color: #352052;
+min-height: 100vh;
+}
+
+#studyScreen h2 {
+color: #7c3aed;
+text-align: center;
+}
+
+#studyScreen p {
+text-align: center;
+}
+
+#studyScreen label {
+display: block;
+margin-top: 16px;
+margin-bottom: 6px;
+font-weight: bold;
+}
+
+#studyScreen select {
+width: 100%;
+padding: 12px;
+border: 1px solid #c4b5fd;
+border-radius: 10px;
+background: white;
+font-size: 16px;
+}
+
+#startStudyBtn,
+#backToChatBtn {
+width: 100%;
+padding: 12px;
+margin-top: 14px;
+border: none;
+border-radius: 12px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+
+#startStudyBtn {
+background: #8b5cf6;
+color: white;
+}
+
+#backToChatBtn {
+background: #ede9fe;
+color: #5b21b6;
+}
+#accountScreen {
+  padding: 24px;
+  min-height: 100vh;
+  background: #faf5ff;
+  color: #352052;
+  box-sizing: border-box;
+}
+
+#accountScreen h2 {
+  color: #7c3aed;
+  text-align: center;
+}
+
+#accountScreen label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+#accountScreen input {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #c4b5fd;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#accountScreen button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #8b5cf6;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#accountScreen #backFromAccountBtn {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+#accountMessage {
+  overflow-wrap: anywhere;
+}
+#dashboardScreen {
+  padding: 22px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: #faf5ff;
+  color: #352052;
+  font-family: Arial, sans-serif;
+}
+
+#dashboardScreen h2 {
+  color: #7c3aed;
+  text-align: center;
+}
+
+#dashboardScreen > p {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.dashboard-card {
+  background: white;
+  border: 1px solid #e9d5ff;
+  border-radius: 16px;
+  padding: 16px;
+  margin: 14px 0;
+  box-shadow: 0 3px 10px rgba(124, 58, 237, 0.08);
+}
+
+.dashboard-card h3 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: #6d28d9;
+}
+
+.dashboard-card p {
+  margin: 0;
+  font-size: 25px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+#dashboardHistory {
+  margin-top: 22px;
+}
+
+#dashboardHistory > div {
+  background: white;
+  border-radius: 12px;
+  padding: 13px;
+  margin: 10px 0;
+  overflow-wrap: anywhere;
+}
+
+#refreshDashboardBtn,
+#backFromDashboardBtn {
+  width: 100%;
+  padding: 13px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #8b5cf6;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#dashboardScreen #backFromDashboardBtn {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+/* 💜 LOVIA BEAUTIFUL LAVENDER THEME 💜 */
+
+body {
+  background: linear-gradient(135deg, #f5efff, #eadcff, #fff5fb);
+  color: #35204f;
+  font-family: Arial, sans-serif;
+}
+
+#leaderboardScreen {
+  max-width: 700px;
+  margin: 25px auto;
+  padding: 25px 18px;
+  background: linear-gradient(145deg, #ffffff, #f6edff);
+  border: 2px solid #e2ccff;
+  border-radius: 26px;
+  box-shadow: 0 10px 30px rgba(104, 55, 155, 0.15);
+}
+
+#leaderboardScreen h2 {
+  color: #7137a8;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+#leaderboardScreen p {
+  text-align: center;
+  color: #745b8c;
+  line-height: 1.6;
+}
+
+#leaderboardMessage ol {
+  padding-left: 35px;
+}
+
+#leaderboardMessage li {
+  background: #ffffff;
+  border: 1px solid #eadcff;
+  border-radius: 15px;
+  padding: 16px 12px;
+  margin: 12px 0;
+  box-shadow: 0 4px 12px rgba(104, 55, 155, 0.08);
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+#refreshLeaderboardBtn,
+#backFromLeaderboardBtn {
+  background: linear-gradient(135deg, #9b5de5, #7137a8);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 13px 18px;
+  margin: 8px 4px;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(113, 55, 168, 0.2);
+}
+
+#refreshLeaderboardBtn:active,
+#backFromLeaderboardBtn:active {
+  transform: scale(0.97);
+}
+
+@media (max-width: 600px) {
+  #leaderboardScreen {
+    margin: 12px 8px;
+    padding: 20px 12px;
+  }
+
+  #leaderboardScreen h2 {
+    font-size: 24px;
+  }
+
+  #refreshLeaderboardBtn,
+  #backFromLeaderboardBtn {
+    width: 100%;
+    margin: 7px 0;
+  }
+}
+/* 💜 LOVIA WALLPAPER SETTINGS */
+#loviaThemes {
+  background: linear-gradient(145deg, #fff0f7, #f0e6ff, #ffffff) !important;
+  border: 2px solid #e5b8f5;
+  border-radius: 24px !important;
+  padding: 22px !important;
+  box-shadow: 0 12px 40px rgba(111, 45, 145, 0.3);
+  text-align: center;
+  max-width: 430px;
+  margin: 10px auto !important;
+  color: #653477;
+  font-family: Arial, sans-serif;
+}
+
+#loviaThemes h3 {
+  color: #8e44ad;
+  font-size: 21px;
+  margin: 5px 0 18px;
+  font-weight: bold;
+}
+
+#loviaThemes button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 14px 12px;
+  border: 1px solid #ead0f5;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #fce8f5);
+  color: #743c91;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(120, 70, 150, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#loviaThemes button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 5px rgba(120, 70, 150, 0.2);
+}
+
+#loviaThemes button:last-child {
+  background: linear-gradient(135deg, #a65bc4, #7950a8);
+  color: white;
+  border: none;
+  margin-top: 18px;
+}
+#loviaLiveWallpaper {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+/* Keep Lovia's screens above the animation */
+.app,
+#studyScreen,
+#accountScreen,
+#leaderboardScreen,
+#dashboardScreen {
+  position: relative;
+  z-index: 3;
+}
+
+/* Keep the wallpaper settings above everything */
+#loviaThemes {
+  z-index: 9999 !important;
+}
