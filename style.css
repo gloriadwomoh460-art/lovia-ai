@@ -956,3 +956,32 @@ body {
   right: 0;
   transform: none;
 }
+/* Keep every Lovia screen aligned */
+#studyScreen,
+#accountScreen,
+#leaderboardScreen,
+#dashboardScreen {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px;
+  position: relative;
+  left: 0;
+  right: 0;
+  transform: none;
+  overflow-wrap: anywhere;
+}
+
+#studyScreen[hidden],
+#accountScreen[hidden],
+#leaderboardScreen[hidden],
+#dashboardScreen[hidden] {
+  display: none !important;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
