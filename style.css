@@ -930,3 +930,29 @@ body {
     padding: 17px;
   }
 }
+/* 💜 FIX LOVIA SCREEN POSITION */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  transform: none;
+}
+
+.app,
+#studyScreen,
+#accountScreen,
+#leaderboardScreen,
+#dashboardScreen {
+  box-sizing: border-box;
+  max-width: 100%;
+  transform: none;
+}
+
+#loviaLiveWallpaper {
+  left: 0;
+  right: 0;
+  transform: none;
+}
