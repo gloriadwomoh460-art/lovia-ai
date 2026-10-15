@@ -552,12 +552,26 @@ body {
 #studyScreen,
 #accountScreen,
 #leaderboardScreen,
-#dashboardScreen {
-  position: relative;
-  z-index: 3;
-}
+
 
 /* Keep the wallpaper settings above everything */
 #loviaThemes {
   z-index: 9999 !important;
+}
+/* Make Lovia fit wider tablet screens */
+@media (min-width: 700px) {
+  body {
+    width: 100%;
+  }
+
+  #app,
+  .app,
+  .container {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+#dashboardScreen {
+  position: relative;
+  z-index: 3;
 }
