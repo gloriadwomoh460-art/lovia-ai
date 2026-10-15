@@ -575,3 +575,20 @@ body {
   position: relative;
   z-index: 3;
 }
+@media (min-width: 700px) {
+  body {
+    padding: 8px;
+  }
+
+  .app {
+    width: 100% !important;
+    max-width: none !important;
+    height: 95vh !important;
+    margin: 0 !important;
+    border-radius: 16px;
+  }
+
+  .row > div:nth-child(2) {
+    max-width: 90%;
+  }
+}
